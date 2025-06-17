@@ -54,9 +54,43 @@ Es una técnica para construir imágenes Docker optimizadas, utilizando múltipl
 - [Documentación de pgAdmin](https://www.pgadmin.org/docs/)
 - [Proyecto base en GitHub](https://github.com/maguaman2/tendencias-mar22-security)
 
----
 
 ## 8. Procedimiento
+
+1 Clonar el repositorio 
+
+
+1 Crear los archivos -env docker compose, docker file y application yml 
+
+Para automatizar el despliegue del backend con Docker y Docker Compose, se crearon cuatro archivos principales. El archivo .env se utilizó para guardar de forma segura las variables de entorno, como el usuario, contraseña y nombre de la base de datos, permitiendo separar esta información del resto de la configuración. Luego, se construyó el archivo docker-compose.yml, que fue el encargado de levantar tres servicios: PostgreSQL como base de datos, pgAdmin como interfaz gráfica para administrarla, y la aplicación backend en Java. Además, este archivo crea volúmenes y redes para asegurar la persistencia de datos y la comunicación entre contenedores.
+
+Se diseñó también un Dockerfile con configuración multi-stage, lo cual permitió compilar el proyecto y generar una imagen más optimizada y ligera, separando la fase de construcción de la de ejecución. Finalmente, se creó el archivo application.yml dentro de src/main/resources, que permite que la aplicación Spring Boot se conecte a la base de datos utilizando las variables del entorno. Con estos pasos, se logró levantar un entorno completo, automatizado y funcional desde cero.
+
+
+## 9. Resultados esperados
+Acceso a pgAdmin desde: http://localhost:8081
+
+Backend funcionando desde: http://localhost:8080
+
+Conexión activa entre backend y PostgreSQL.
+
+Contenedores en estado "Up".
+
+Migraciones exitosas desde Flyway.
+
+## 10 Bibliografía
+
+Docker. (s.f.). Docker documentation. https://docs.docker.com/
+
+PostgreSQL Global Development Group. (s.f.). PostgreSQL documentation. https://www.postgresql.org/docs/
+
+pgAdmin Team. (s.f.). pgAdmin documentation. https://www.pgadmin.org/docs/
+
+Spring.io. (s.f.). Spring Boot Reference Documentation. https://docs.spring.io/spring-boot/docs/current/reference/html/
+
+Baeldung. (2021). Guide to Dockerizing Spring Boot Applications. https://www.baeldung.com/dockerizing-spring-boot-application
+
+Red Hat. (s.f.). ¿Qué es Docker?. https://www.redhat.com/es/topics/containers/what-is-docker
 
 
 
