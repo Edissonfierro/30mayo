@@ -58,10 +58,10 @@ Es una técnica para construir imágenes Docker optimizadas, utilizando múltipl
 ## 8. Procedimiento
 
 1 Clonar el repositorio 
-
+ ![Texto alternativo](https://github.com/Edissonfierro/30mayo/blob/main/uno.jpg)
 
 1 Crear los archivos -env docker compose, docker file y application yml 
-
+ ![Texto alternativo](https://github.com/Edissonfierro/30mayo/blob/main/dos.jpg)
 Para automatizar el despliegue del backend con Docker y Docker Compose, se crearon cuatro archivos principales. El archivo .env se utilizó para guardar de forma segura las variables de entorno, como el usuario, contraseña y nombre de la base de datos, permitiendo separar esta información del resto de la configuración. Luego, se construyó el archivo docker-compose.yml, que fue el encargado de levantar tres servicios: PostgreSQL como base de datos, pgAdmin como interfaz gráfica para administrarla, y la aplicación backend en Java. Además, este archivo crea volúmenes y redes para asegurar la persistencia de datos y la comunicación entre contenedores.
 
 Se diseñó también un Dockerfile con configuración multi-stage, lo cual permitió compilar el proyecto y generar una imagen más optimizada y ligera, separando la fase de construcción de la de ejecución. Finalmente, se creó el archivo application.yml dentro de src/main/resources, que permite que la aplicación Spring Boot se conecte a la base de datos utilizando las variables del entorno. Con estos pasos, se logró levantar un entorno completo, automatizado y funcional desde cero.
@@ -70,12 +70,15 @@ Se diseñó también un Dockerfile con configuración multi-stage, lo cual permi
 ## 9. Resultados esperados
 Acceso a pgAdmin desde: http://localhost:8081
 
+ ![Texto alternativo](https://github.com/Edissonfierro/30mayo/blob/main/pgadmin.jpg)
 Backend funcionando desde: http://localhost:8080
 
+ ![Texto alternativo](https://github.com/Edissonfierro/30mayo/blob/main/controller.jpg)
+ ![Texto alternativo](https://github.com/Edissonfierro/30mayo/blob/main/consultaendpoint.jpg)
 Conexión activa entre backend y PostgreSQL.
 
 Contenedores en estado "Up".
-
+ ![Texto alternativo](https://github.com/Edissonfierro/30mayo/blob/main/contenedores.jpg)
 Migraciones exitosas desde Flyway.
 
 ## 10 Bibliografía
